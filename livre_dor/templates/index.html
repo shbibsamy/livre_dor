@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+
+{% endblock header %}
+
+{% block main %}
+<span class="message">{{ message }}</span>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.error }}
+    <fieldset>
+        <legend>
+            <span>Merci de laisser un message sympatique.</span>
+        </legend>
+        <div class="email">
+            <span class="email-label">{{ form.email.label }}</span>
+            <span class="email-input">{{ form.email }}</span>
+        </div>
+        <div class="commentaire">
+            <span class="commentaire-label">{{ form.comment.label }}</span>
+            <span class="commentaire-input">{{ form.comment }}</span>
+        </div>
+    </fieldset>
+    <input type="submit">
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Visiteur
+            </th>
+            <th>
+                Date de visite
+            </th>
+            <th>
+                Message
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for comment in data %}
+        <tr>
+            <td class="tableau-visiteur">
+                {{ comment.email}}
+            </td>
+            <td class="tableau-date">
+                {{ comment.date}}
+            </td>
+            <td>
+                {{ comment.comment}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock main %}

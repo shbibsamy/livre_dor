@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "livre-dor"
+version = "0.1.0"
+description = ""
+authors = ["shbibsamy <shbibsamy@gmail.com>"]
+readme = "README.md"
+packages = [{include = "livre_dor"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+djangorestframework = "^3.14.0"
+Django = "^4.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

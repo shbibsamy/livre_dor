@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <title>Livre D'or ID Formation</title>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            {% block header %} {% endblock %}
+        </header>
+        <main>
+            {% block main %}{% endblock  %}
+        </main>
+        <footer>
+            {% block footer %}{% endblock  %}
+        </footer>
+</div>
+</body>
+</html>
